@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/reset';
+@import '@fontsource/source-serif-pro/400.css';
+@import '@fontsource-variable/inter/opsz.css';
+
+:root {
+  font-family:
+    'Source Serif Pro',
+    'Inter Variable',
+    serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000000;
+  // TODO Добавить поддержку темной темы в будущем
+  color-scheme: light;
+
+  --color-text-primary: #000000;
+  --color-text-input: #22281B;
+  --color-text-muted: #3F3F37B2;
+  --color-text-secondary: #A6B762;
+  --color-text-secondary-hover: #96A855;
+  --color-text-secondary-active: #7F9147;
+  --color-text-label: #2A3019;
+  --color-border: #3F3F37;
+  --color-border-focus: #B7B700;
+  --color-border-hover: #c5c532;
+  --color-background: #FEFFF4;
+
+  --radius-s: 15px;
+  --radius-l: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: var(--color-background);
+}
+
+button,
+input,
+textarea,
+select {
+  border: 1px solid transparent;
+}
+
+input,
+textarea {
+  caret-color: #B7B700;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
