@@ -8,8 +8,7 @@ export const AUTH_ROUTES: Routes = [
   },
   {
     path: '',
-    loadComponent: () =>
-      import('./layouts/auth-layout/auth-layout').then((m) => m.AuthLayout),
+    loadComponent: () => import('./layouts/auth-layout/auth-layout').then((m) => m.AuthLayout),
     children: [
       {
         path: 'login',

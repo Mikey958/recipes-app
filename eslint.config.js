@@ -27,8 +27,11 @@ module.exports = defineConfig([
     },
     processor: angular.processInlineTemplates,
     rules: {
+      'no-unused-vars': 'off',
+
       curly: ['error', 'all'],
       eqeqeq: ['error', 'always'],
+
       '@angular-eslint/directive-selector': [
         'error',
         {
@@ -61,19 +64,11 @@ module.exports = defineConfig([
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
+          enableAutofixRemoval: {
+            imports: true,
+          },
         },
       ],
-    },
-  },
-  {
-    files: ['**/*.html'],
-    extends: [
-      angular.configs.templateRecommended,
-      angular.configs.templateAccessibility,
-      eslintConfigPrettier,
-    ],
-    rules: {
-      '@angular-eslint/template/button-has-type': 'error',
     },
   },
 ]);

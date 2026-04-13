@@ -26,16 +26,24 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding:
-      var(--auth-header-padding-top)
-      var(--auth-header-padding-right)
-      var(--auth-header-padding-bottom)
-      var(--auth-header-padding-left);
+    padding: var(--auth-header-padding-top) var(--auth-header-padding-right)
+      var(--auth-header-padding-bottom) var(--auth-header-padding-left);
     width: 100%;
     height: 70px;
   }
 
+  &__frame {
+    position: absolute;
+    top: 50%;
+    right: 204px;
+    transform: translateY(-50%);
+  }
+
   &__form-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 228px;
     align-self: flex-start;
   }
 }

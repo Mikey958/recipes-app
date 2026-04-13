@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-auth-layout',
@@ -7,4 +7,12 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './auth-layout.html',
   styleUrl: './auth-layout.scss',
 })
-export class AuthLayout {}
+export class AuthLayout {
+  protected readonly router = inject(Router);
+
+  protected get currentPath(): string {
+    const route = this.router.url.split('/').pop() ?? '';
+
+    return ['login', 'register'].includes(route) ? route : '';
+  }
+}

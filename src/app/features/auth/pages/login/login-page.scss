@@ -22,7 +22,6 @@
   justify-content: flex-start;
   background-color: transparent;
   width: var(--auth-form-width);
-  margin: var(--auth-login-margin-top) 0 0 var(--auth-form-margin-left);
   gap: var(--auth-form-gap);
 
   &__header {
@@ -49,12 +48,12 @@
     line-height: 1.2;
     letter-spacing: 0;
     vertical-align: bottom;
-    color: var(--color-text-muted)
+    color: var(--color-text-muted);
   }
 
   &__subtitle-link {
     font-weight: 600;
-    color: var(--color-text-secondary)
+    color: var(--color-text-secondary);
   }
 
   &__form {
@@ -92,7 +91,7 @@
     height: var(--auth-input-height);
     border-radius: var(--radius-s);
     border: 1.5px solid var(--color-border);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 0 var(--auth-input-padding-x);
 
     font-family: 'Inter Variable', serif;
@@ -106,12 +105,22 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      border-color: var(--color-border-hover);
+      border-color: var(--color-border-focus);
     }
 
     &:focus {
       outline: none;
-      border-color: var(--color-border-focus)
+      border-color: var(--color-border-focus);
+    }
+
+    &:disabled {
+      border-color: var(--color-border-disabled);
+      background: var(--color-background-disabled);
+      color: var(--color-text-disabled);
+
+      &::placeholder {
+        color: var(--color-text-disabled);
+      }
     }
 
     &::placeholder {
@@ -136,7 +145,7 @@
     width: 100%;
     height: var(--auth-submit-height);
     border-radius: var(--radius-s);
-    background: linear-gradient(90deg, #A6B762 50%, #B1C560 100%);
+    background: linear-gradient(90deg, #a6b762 50%, #b1c560 100%);
 
     font-family: 'Inter Variable', serif;
     font-weight: 600;
@@ -144,7 +153,7 @@
     line-height: 1;
     letter-spacing: 0;
     vertical-align: bottom;
-    color: #FFFFFF;
+    color: #ffffff;
 
     transition: all 0.3s ease-in-out;
 
