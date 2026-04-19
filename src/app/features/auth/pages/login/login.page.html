@@ -3,14 +3,22 @@
     <h1 class="auth-form__title">Вход в аккаунт</h1>
     <p class="auth-form__subtitle">
       У вас нет аккаунта?
-      <a class="auth-form__subtitle-link link" routerLink="/auth/register">Регистрация </a>
+      <a
+        class="auth-form__subtitle-link link"
+        routerLink="/auth/register"
+      >Регистрация
+      </a>
     </p>
   </div>
 
   <form class="auth-form__form">
     <label class="auth-form__field">
       <span class="auth-form__label">Почта</span>
-      <input class="auth-form__input" type="email" placeholder="Введите ваш email..." />
+      <input
+        class="auth-form__input"
+        type="email"
+        placeholder="Введите ваш email..."
+      />
     </label>
 
     <label class="auth-form__field">
@@ -19,13 +27,19 @@
         class="auth-form__input"
         type="password"
         placeholder="Введите ваш пароль..."
-        disabled
       />
     </label>
 
-    <!--TODO Пока никуда не ведет, надо добавить страницу в будущем-->
-    <a class="auth-form__sublink link" href="">Забыли пароль? </a>
+    <a
+      class="auth-form__sublink link"
+      routerLink="/auth/forgot-password"
+    >Забыли пароль?
+    </a>
 
-    <button type="submit" class="auth-form__submit">Войти</button>
+    <button
+      type="submit"
+      class="auth-form__submit"
+    >Войти
+    </button>
   </form>
 </section>

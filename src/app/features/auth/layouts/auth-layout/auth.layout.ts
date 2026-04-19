@@ -4,8 +4,8 @@ import { Router, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-auth-layout',
   imports: [RouterOutlet],
-  templateUrl: './auth-layout.html',
-  styleUrl: './auth-layout.scss',
+  templateUrl: './auth.layout.html',
+  styleUrl: './auth.layout.scss',
 })
 export class AuthLayout {
   protected readonly router = inject(Router);
@@ -13,6 +13,6 @@ export class AuthLayout {
   protected get currentPath(): string {
     const route = this.router.url.split('/').pop() ?? '';
 
-    return ['login', 'register'].includes(route) ? route : '';
+    return ['login', 'register', 'forgot-password'].includes(route) ? route : '';
   }
 }
