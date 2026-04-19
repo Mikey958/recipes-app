@@ -1,0 +1,17 @@
+<div class="auth-layout">
+  @if (currentPath) {
+    <div class="auth-layout__frame">
+      <img
+        class="auth-layout__frame-logo"
+        [src]="`assets/images/auth-background-${currentPath}-frame.svg`"
+        alt="Фрейм"
+      />
+    </div>
+  }
+  <header class="auth-layout__header">
+    <img src="/assets/icons/auth-logo.svg" alt="Логотип" />
+  </header>
+  <div class="auth-layout__form-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>

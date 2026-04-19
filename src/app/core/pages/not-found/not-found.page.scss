@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.not-found-page {
+
+  &__title {
+    margin: auto;
+
+    font-family: 'Inter Variable', serif;
+    font-size: 128px;
+    line-height: 1.21;
+    letter-spacing: 0;
+    vertical-align: bottom;
+
+    color: var(--color-text-secondary);
+  }
+}

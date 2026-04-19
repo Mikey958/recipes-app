@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/reset';
+@import '@fontsource/source-serif-pro/400.css';
+@import '@fontsource-variable/inter/opsz.css';
+
+:root {
+  font-family: 'Source Serif Pro', 'Inter Variable', serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000000;
+  // TODO Добавить поддержку темной темы в будущем
+  color-scheme: light;
+
+  --color-text-description: #797973;
+  --color-text-primary: #000000;
+  --color-text-input: #22281b;
+  --color-text-muted: #3f3f37b2;
+  --color-text-secondary: #a6b762;
+  --color-text-secondary-hover: #96a855;
+  --color-text-secondary-active: #7f9147;
+  --color-text-label: #2a3019;
+  --color-border: #3f3f37;
+  --color-border-focus: #b7b700;
+  --color-border-hover: #c5c532;
+  --color-border-disabled: #b8b8b8;
+  --color-background-disabled: #e1e1e1;
+  --color-text-disabled: #b8b8b8;
+  --color-background: #ffffff;
+
+  --radius-s: 15px;
+  --radius-l: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: var(--color-background);
+}
+
+button,
+input,
+textarea,
+select {
+  border: 1px solid transparent;
+}
+
+input,
+textarea {
+  caret-color: #b7b700;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
