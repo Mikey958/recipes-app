@@ -1,0 +1,41 @@
+<section class="main-popular-recipes">
+  <h2 class="main-popular-recipes__title">
+    Популярные
+    <span class="main-popular-recipes__title_green">рецепты</span>
+  </h2>
+
+  <div
+    #viewport
+    class="main-popular-recipes__viewport"
+  >
+    <div
+      class="main-popular-recipes__track"
+      [class.main-popular-recipes__track_snapping]="isSnapping"
+      [style.transform]="trackTransform"
+      (transitionend)="onTransitionEnd($event)"
+    >
+      @for (recipe of slides; track recipe.uid; let i = $index) {
+        <article
+          class="main-popular-recipes__card"
+          [class.main-popular-recipes__card_active]="i === currentIndex"
+          [attr.aria-hidden]="recipe.isClone ? 'true' : null"
+        >
+          {{ recipe.title }}
+        </article>
+      }
+    </div>
+  </div>
+
+  @if (recipes.length > 1) {
+    <div class="main-popular-recipes__dots">
+      @for (recipe of recipes; track recipe.id; let i = $index) {
+        <div class="main-popular-recipes__dot_wrapper">
+          <span
+            class="main-popular-recipes__dot"
+            [class.main-popular-recipes__dot_active]="i === activeDotIndex"
+          ></span>
+        </div>
+      }
+    </div>
+  }
+</section>
