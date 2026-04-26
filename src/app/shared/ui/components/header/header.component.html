@@ -1,0 +1,77 @@
+<header class="header">
+  <div class="header__wrapper">
+    <img
+      class="header__logo"
+      src="assets/icons/auth-logo.svg"
+      alt="Логотип"
+    >
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li
+          class="header__nav-elem"
+          routerLinkActive="header__nav-elem_active"
+        >
+          <a
+            class="header__nav-link"
+            routerLink="/main"
+          >Главная
+          </a>
+        </li>
+        <li
+          class="header__nav-elem"
+          routerLinkActive="header__nav-elem_active"
+        >
+          <a
+            class="header__nav-link"
+            routerLink="/recipes"
+          >Рецепты
+          </a>
+        </li>
+        <li
+          class="header__nav-elem"
+          routerLinkActive="header__nav-elem_active"
+        >
+          <a
+            class="header__nav-link"
+            routerLink="/about"
+          >О нас
+          </a>
+        </li>
+        <li
+          class="header__nav-elem"
+          routerLinkActive="header__nav-elem_active"
+        >
+          <a
+            class="header__nav-link"
+            routerLink="/contacts"
+          >Контакты
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__right-wrapper">
+      <div class="header__search-wrapper">
+        <input
+          type="text"
+          name="search"
+          placeholder="Поиск..."
+          class="header__search-input"
+        >
+        <button class="header__circle-button">
+          <img
+            class="header__icon"
+            src="assets/icons/icon-search-header.svg"
+            alt="иконка поиска"
+          >
+        </button>
+      </div>
+      <button class="header__circle-button">
+        <img
+          class="header__icon"
+          src="assets/icons/icon-profile-header.svg"
+          alt="иконка профиля"
+        >
+      </button>
+    </div>
+  </div>
+</header>
