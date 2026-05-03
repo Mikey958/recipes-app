@@ -14,3 +14,11 @@
   line-height: $line-height;
   letter-spacing: 0;
 }
+
+@mixin roboto-text($font-size: 16px, $font-weight: 500, $line-height: 1.1875) {
+  font-family: "Roboto Variable", serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: 0;
+}

@@ -43,9 +43,7 @@ export class MainPopularRecipesComponent implements AfterViewInit {
   private readonly gapPx = 20;
   private readonly autoplayDelayMs = 3000;
 
-  private resizeObserver?: ResizeObserver;
-
-  protected viewportWidth = 0;
+  private viewportWidth = 0;
 
   protected readonly recipes: RecipeCard[] = [
     { id: '1', title: 'Рецепт 1' },
@@ -55,11 +53,12 @@ export class MainPopularRecipesComponent implements AfterViewInit {
     { id: '5', title: 'Рецепт 5' },
   ];
 
-  private readonly cloneCount = Math.min(2, this.recipes.length);
+  private readonly canLoop = this.recipes.length > 1;
+  private readonly cloneCount = this.canLoop ? Math.min(2, this.recipes.length) : 0;
 
   protected readonly slides: CarouselSlide[] = this.createSlides(this.recipes);
 
-  protected currentIndex = this.recipes.length > 1 ? this.cloneCount : 0;
+  protected currentIndex = this.cloneCount;
   protected isSnapping = false;
 
   protected get trackTransform(): string {
@@ -73,7 +72,7 @@ export class MainPopularRecipesComponent implements AfterViewInit {
   }
 
   constructor() {
-    if (this.recipes.length <= 1) {
+    if (!this.canLoop) {
       return;
     }
 
@@ -90,21 +89,21 @@ export class MainPopularRecipesComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
     this.updateViewportWidth();
 
-    this.resizeObserver = new ResizeObserver(() => {
+    const resizeObserver = new ResizeObserver(() => {
       this.updateViewportWidth();
     });
 
-    this.resizeObserver.observe(this.viewportRef.nativeElement);
+    resizeObserver.observe(this.viewportRef.nativeElement);
 
     this.destroyRef.onDestroy(() => {
-      this.resizeObserver?.disconnect();
+      resizeObserver.disconnect();
     });
   }
 
   @HostListener('document:visibilitychange')
   protected onVisibilityChange(): void {
     if (!this.document.hidden) {
-      this.normalizePosition();
+      this.snapIfNeeded();
     }
   }
 
@@ -113,11 +112,11 @@ export class MainPopularRecipesComponent implements AfterViewInit {
       return;
     }
 
-    this.normalizePosition();
+    this.snapIfNeeded();
   }
 
   private next(): void {
-    if (this.normalizePosition()) {
+    if (this.snapIfNeeded()) {
       return;
     }
 
@@ -125,7 +124,7 @@ export class MainPopularRecipesComponent implements AfterViewInit {
     this.cdr.markForCheck();
   }
 
-  private normalizePosition(): boolean {
+  private snapIfNeeded(): boolean {
     const firstAfterCloneIndex = this.recipes.length + this.cloneCount;
 
     if (this.currentIndex < firstAfterCloneIndex) {
@@ -159,7 +158,7 @@ export class MainPopularRecipesComponent implements AfterViewInit {
   }
 
   private updateViewportWidth(): void {
-    const width = this.viewportRef.nativeElement.clientWidth;
+    const width = this.viewportRef.nativeElement.getBoundingClientRect().width;
 
     if (width === this.viewportWidth) {
       return;
@@ -170,14 +169,14 @@ export class MainPopularRecipesComponent implements AfterViewInit {
   }
 
   private createSlides(cards: RecipeCard[]): CarouselSlide[] {
-    const realCards = cards.map((card) => ({
+    const realSlides = cards.map((card) => ({
       ...card,
       uid: `real-${card.id}`,
       isClone: false,
     }));
 
-    if (cards.length <= 1) {
-      return realCards;
+    if (!this.canLoop) {
+      return realSlides;
     }
 
     const beforeClones = cards.slice(-this.cloneCount).map((card) => ({
@@ -192,6 +191,6 @@ export class MainPopularRecipesComponent implements AfterViewInit {
       isClone: true,
     }));
 
-    return [...beforeClones, ...realCards, ...afterClones];
+    return [...beforeClones, ...realSlides, ...afterClones];
   }
 }
