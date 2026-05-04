@@ -1,0 +1,48 @@
+@use "text-mixins" as *;
+
+:host {
+  width: 1166px;
+}
+
+.profile-nav {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-bottom: 2px solid var(--color-background-disabled);
+
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__list-elem {
+    cursor: pointer;
+
+    width: 164px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+
+    color: var(--color-footer-input);
+
+    border-bottom: 2px solid transparent;
+
+    @include roboto-text(20px, 400, 1.15);
+
+    &_active {
+      color: var(--color-text-secondary);
+      border-bottom: 2px solid var(--color-text-secondary);
+    }
+  }
+}
