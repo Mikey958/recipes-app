@@ -40,6 +40,8 @@
 
     @include roboto-text(20px, 400, 1.15);
 
+    transition: 0.3s ease-in-out;
+
     &_active {
       color: var(--color-text-secondary);
       border-bottom: 2px solid var(--color-text-secondary);

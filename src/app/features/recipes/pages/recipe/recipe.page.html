@@ -1,0 +1,25 @@
+<link
+  rel="stylesheet"
+  href="../../components/recipe-banner/recipe-banner.component.scss"
+>
+<main class="recipe-page">
+  <div class="recipe-page__wrapper">
+    <div class="recipe-page__header">
+      <a
+        class="recipe-page__back-button"
+        routerLink="/recipes"
+      >
+        <img
+          class="recipe-page__arrow-icon"
+          src="/assets/icons/icon-recipe-arrow.svg"
+          alt="Иконка стрелочки влево"
+        >
+        Назад
+      </a>
+    </div>
+    <app-recipe-banner
+      [recipeTags]="['чеснок', 'свекла', 'капуста']"
+      [recipeName]="'Борщ с пампушками'"
+    />
+  </div>
+</main>
