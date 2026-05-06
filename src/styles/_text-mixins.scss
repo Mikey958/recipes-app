@@ -1,0 +1,24 @@
+@mixin inter-text($font-size: 16px, $font-weight: 400, $line-height: 1.1875) {
+  font-family: "Inter Variable", serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: 0;
+}
+
+
+@mixin source-serif-text($font-size: 16px, $font-weight: 600, $line-height: 1.1875) {
+  font-family: "Source Serif Pro", serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: 0;
+}
+
+@mixin roboto-text($font-size: 16px, $font-weight: 500, $line-height: 1.1875) {
+  font-family: "Roboto Variable", serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: 0;
+}

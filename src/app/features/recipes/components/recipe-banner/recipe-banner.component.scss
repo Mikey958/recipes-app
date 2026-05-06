@@ -1,0 +1,54 @@
+@use "text-mixins" as *;
+
+:host {
+  width: 100%;
+
+  --color-tag-line: #FFFFFF03;
+}
+
+.recipe-banner {
+  height: 419px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 30px;
+  border: 1px solid transparent;
+
+  background: url("/assets/images-examples/image-example-recipe-banner.png") no-repeat center center / cover;
+
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &__tag {
+    width: 81px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100px;
+    border: 1px solid var(--color-tag-line);
+
+    background-color: #FFFFFF29;
+    backdrop-filter: blur(39.60px);
+
+    @include roboto-text(16px, 400);
+    color: var(--color-background);
+  }
+
+  &__title {
+    @include source-serif-text(48px, 600, 1.25);
+    color: var(--color-background);
+  }
+}

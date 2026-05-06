@@ -12,6 +12,11 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/shared/*": ["src/app/shared/*"],
+      "@/core/*": ["src/app/core/*"]
+    },
     "target": "ES2022",
     "module": "preserve"
   },

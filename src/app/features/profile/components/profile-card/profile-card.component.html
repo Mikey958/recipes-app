@@ -1,0 +1,39 @@
+<section class="profile-card">
+  <!--  TODO Добавить динамику-->
+  <div class="profile-card__avatar-wrapper">
+    <img
+      class="profile-card__avatar"
+      src="/assets/icons/icon-profile-default.svg"
+      alt="Аватар профиля"
+    >
+  </div>
+  <div class="profile-card__info-wrapper">
+    <p class="profile-card__name">name</p>
+    <p class="profile-card__email">email</p>
+    <div class="profile-card__counter-wrapper">
+      <p class="profile-card__counter-text">
+        <span class="profile-card__count">0</span>
+        {{ pluralizeRecipesRow }}
+      </p>
+      <p class="profile-card__counter-text">
+        <span class="profile-card__count">0</span>
+        {{ pluralizeSubscribersRow }}
+      </p>
+      <p class="profile-card__counter-text">
+        <span class="profile-card__count">0</span>
+        в избранном
+      </p>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="profile-card__button"
+  >
+    <img
+      class="profile-card__button-icon"
+      src="/assets/icons/icon-chef-hat.svg"
+      alt="шапка повара"
+    >
+    <span class="profile-card__button-text">Стать автором</span>
+  </button>
+</section>

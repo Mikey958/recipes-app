@@ -1,0 +1,186 @@
+@use "text-mixins" as *;
+
+:host {
+  width: 100%;
+  background-color: var(--color-background-secondary);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+
+  width: 100%;
+  height: 726px;
+  background-color: var(--color-background-footer);
+
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: 60px 11.875% 55px 11.875%;
+
+  &__cards {
+    width: 59.42%;
+    height: 611px;
+    border-radius: var(--radius-m);
+    background: var(--color-background-footer-frame) url('/assets/images/image-footer-background.png') center / cover no-repeat;
+
+    padding: 60px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 130px);
+    gap: 50px 40px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--color-background-secondary);
+    border-radius: var(--radius-m);
+    padding: 15px 20px;
+    gap: 5px;
+  }
+
+  &__card-title {
+    @include roboto-text;
+    color: var(--color-text-input);
+  }
+
+  &__card-text {
+    @include roboto-text(16px, 400, 1.1875);
+    color: var(--color-footer-card-text);
+  }
+
+  &__wrapper {
+    width: 39.21%;
+    height: 611px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 19px;
+  }
+
+  &__newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 42.7%;
+    border-radius: var(--radius-m);
+    background: var(--color-background-secondary);
+
+    padding: 25px 40px 45px 40px;
+    gap: 25px;
+  }
+
+  &__logo {
+    width: 56.68%;
+  }
+
+  &__newsletter-text {
+    flex: 1;
+    @include source-serif-text(20px, 400, 1.25);
+    color: var(--color-footer-card-text);
+  }
+
+  &__form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &__form-input {
+    align-items: flex-start;
+    height: 30px;
+    flex: 1;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px solid var(--color-footer-input);
+
+    @include source-serif-text(16px, 400, 1.25);
+    color: var(--color-footer-input);
+
+    &::placeholder {
+      color: var(--color-footer-input);
+    }
+  }
+
+  &__form-button {
+    width: 160px;
+    height: 41px;
+    border-radius: var(--radius-xl);
+    background-color: var(--color-text-secondary);
+
+    @include roboto-text(16px, 500);
+    color: var(--color-background);
+  }
+
+  &__links-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 40px 25px 40px;
+    width: 100%;
+    height: 54.17%;
+    gap: 10px;
+
+    background-color: var(--color-background-secondary);
+    border-radius: var(--radius-m);
+  }
+
+  &__links {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-footer-input);
+  }
+
+  &__links-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link-title {
+    @include roboto-text(20px, 500, 1.15);
+    color: var(--color-text-input);
+    margin-bottom: 25px;
+  }
+
+  &__link {
+    @include roboto-text(16px, 400);
+    color: var(--color-footer-link);
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__info-text {
+    @include source-serif-text(16px, 400, 1.25);
+    color: var(--color-footer-input);
+  }
+}

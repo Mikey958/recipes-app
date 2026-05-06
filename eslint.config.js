@@ -29,6 +29,8 @@ module.exports = defineConfig([
     rules: {
       'no-unused-vars': 'off',
 
+      '@typescript-eslint/no-extraneous-class': 'off',
+
       curly: ['error', 'all'],
       eqeqeq: ['error', 'always'],
 

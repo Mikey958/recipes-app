@@ -1,0 +1,109 @@
+@use 'text-mixins' as *;
+
+:host {
+  width: 1166px;
+}
+
+.profile-card {
+  width: 100%;
+  height: 196px;
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+
+  border-radius: 25px;
+  padding: 30px 30px 30px 40px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-background-disabled);
+
+  &__avatar-wrapper {
+    width: 101px;
+    height: 101px;
+    background-color: var(--color-background-secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1.5px solid var(--color-background-disabled);
+  }
+
+  &__info-wrapper {
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__name {
+    @include source-serif-text(32px, 600, 1.25);
+    color: var(--color-text-input);
+
+    margin-bottom: 10px;
+  }
+
+  &__email {
+    @include roboto-text(20px, 400, 1.15);
+    color: var(--color-footer-input);
+
+    margin-bottom: 30px;
+  }
+
+  &__counter-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+  }
+
+  &__counter-text {
+    @include roboto-text(20px, 400, 1.15);
+    color: var(--color-footer-input);
+  }
+
+  &__count {
+    @include roboto-text(20px, 600, 1.15);
+    color: var(--color-text-input);
+  }
+
+  &__button {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+
+    width: 235px;
+    height: 54px;
+    border-radius: 15px;
+    background-color: var(--color-background-profile-button);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    transition: opacity ease-in-out 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+
+  &__button-text {
+    @include roboto-text(20px, 600, 1.15);
+    color: var(--color-background);
+  }
+}
+

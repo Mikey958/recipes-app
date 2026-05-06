@@ -1,0 +1,133 @@
+@use 'text-mixins' as *;
+
+:host {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 70px;
+
+  background-color: var(--color-background);
+  border-bottom: 0.5px solid var(--color-border-header);
+
+  &__wrapper {
+    width: 76.25%;
+    height: 70px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__nav {
+    margin: 0 15.027% 0 24.248%;
+  }
+
+  &__nav-list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    gap: 20px;
+  }
+
+  &__nav-elem {
+    position: relative;
+    width: 88px;
+
+    font-family: "Roboto Variable", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1875;
+    letter-spacing: 0;
+    vertical-align: bottom;
+    color: var(--color-nav-text);
+
+    &:first-child, &:last-child {
+      width: 89px;
+    }
+
+    &_active::before {
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      content: "";
+      background-color: var(--color-text-secondary);
+      border-radius: 50%;
+    }
+  }
+
+  &__nav-link {
+    color: inherit;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-text-secondary-active);
+    }
+
+    &:active {
+      color: var(--color-text-label);
+    }
+  }
+
+  &__right-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  &__search-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__search-input {
+    outline: none;
+    width: 219px;
+    height: 39px;
+    border-radius: 50px;
+    background-color: var(--color-nav-search-bg);
+    padding: 0 20px;
+
+    @include inter-text(16px, 400, 1.1875);
+    color: var(--color-nav-input-text);
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+
+  &__circle-button {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-nav-search-bg);
+  }
+}

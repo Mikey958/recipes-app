@@ -9,7 +9,15 @@
     </div>
   }
   <header class="auth-layout__header">
-    <img src="/assets/icons/auth-logo.svg" alt="Логотип" />
+    <div
+      routerLink="/main"
+      style="cursor: pointer"
+    >
+      <img
+        src="/assets/icons/auth-logo.svg"
+        alt="Логотип"
+      />
+    </div>
   </header>
   <div class="auth-layout__form-wrapper">
     <router-outlet></router-outlet>

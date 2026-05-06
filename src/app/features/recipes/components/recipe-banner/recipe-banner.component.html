@@ -1,0 +1,10 @@
+<section class="recipe-banner">
+  @if (recipeTags().length) {
+    <div class="recipe-banner__tags">
+      @for (recipeTag of recipeTags(); track recipeTag) {
+        <div class="recipe-banner__tag">#{{ recipeTag }}</div>
+      }
+    </div>
+  }
+  <h1 class="recipe-banner__title">{{ recipeName() }}</h1>
+</section>

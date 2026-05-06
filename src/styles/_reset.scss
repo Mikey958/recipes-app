@@ -73,8 +73,7 @@ figcaption {
   text-wrap: pretty;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul, ol {
   list-style: none;
   padding: 0;
 }
